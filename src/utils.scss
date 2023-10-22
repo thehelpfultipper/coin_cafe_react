@@ -1,0 +1,10 @@
+
+@function rem($px, $base: 16px) {
+    @return ($px / $base) * 1rem;
+  }
+  
+
+@mixin respimg() {
+  width: 100%;
+  height: 100%;
+}

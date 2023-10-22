@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
+
+@import '../../utils.scss';
+
+.container {
+    width: var(--content);
+    margin: 0 auto;
+    padding-top: rem(15px);
+
+    .nav_items {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .logo {
+            span {
+                font-family: 'League Spartan', Roboto, sans-serif;
+                font-size: rem(50px);
+                line-height: 1.4;
+                letter-spacing: rem(-2px);
+            }
+        }
+    }
+}
