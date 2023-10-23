@@ -3,7 +3,8 @@
 @import '../../utils.scss';
 
 .container {
-    width: var(--content);
+    max-width: var(--content);
+    width: 100%;
     margin: 0 auto;
     padding-top: rem(15px);
 
