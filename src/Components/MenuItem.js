@@ -1,5 +1,7 @@
 
-import s from './Menu.module.scss';
+import CartCount from './CartCount';
+
+import s from './MenuItem.module.scss';
 
 const generateRandomPrice = () => {
     let num = Math.floor(Math.random() * 890 + 100) // number between 100 - 890
@@ -18,12 +20,16 @@ const MenuItem = ({data}) => {
     getFirstSentence(data.description)
     return (
         <div className={s.wrapper}>
+            <div className={s.img}>
+                <img src={data.image} alt={data.title} />
+            </div>
             <div className={s.desc}>
                 <h3>{data.title}</h3>
                 <p>{getFirstSentence(data.description)}</p>
             </div>
             <div className={s.price}>
                 <span>${generateRandomPrice()}</span>
+                <CartCount />
             </div>
         </div>
     )
