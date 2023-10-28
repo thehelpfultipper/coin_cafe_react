@@ -1,14 +1,9 @@
+import { useState, useContext, useEffect } from 'react';
 
 import CartCount from './CartCount';
+import CartContext from '../Context/cart-context'; 
 
 import s from './MenuItem.module.scss';
-
-const generateRandomPrice = () => {
-    let num = Math.floor(Math.random() * 890 + 100) // number between 100 - 890
-    let price = (num / 100).toFixed(2);
-
-    return price;
-}
 
 const getFirstSentence = (text) => {
     const sentences = text.match(/[^.!?]+[.!?]+/);
@@ -16,10 +11,27 @@ const getFirstSentence = (text) => {
     return sentences ? sentences[0].trim() : text.trim();
 }
 
-const MenuItem = ({data}) => {
-    getFirstSentence(data.description)
+const MenuItem = ({data, id}) => {
+    let {items, totalAmount, addItem, removeItem} = useContext(CartContext);
+    let [count, setCount] = useState(0);
+
+    const addToCartHandler = (item=data) => {
+        addItem(item);
+        // Update item count in menu 
+        setCount(prevCount => prevCount + 1);
+    }
+
+    const removeCartHandler = (id) => {
+        removeItem(id);
+        // Update item count in menu 
+        setCount(prevCount => {
+            if(prevCount === 0) return 0;
+            return prevCount - 1;
+        });
+    }
+
     return (
-        <div className={s.wrapper}>
+        <div className={s.wrapper} id={id}>
             <div className={s.img}>
                 <img src={data.image} alt={data.title} />
             </div>
@@ -28,8 +40,12 @@ const MenuItem = ({data}) => {
                 <p>{getFirstSentence(data.description)}</p>
             </div>
             <div className={s.price}>
-                <span>${generateRandomPrice()}</span>
-                <CartCount />
+                <span>${data.price}</span>
+                <CartCount 
+                    count={count}
+                    onAddToCart={addToCartHandler.bind(null, data)} 
+                    onRemoveFromCart={removeCartHandler.bind(null, data.id)} 
+                />
             </div>
         </div>
     )

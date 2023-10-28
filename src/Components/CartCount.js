@@ -1,23 +1,37 @@
-import { useState } from 'react';
+import { useState, useContext, useEffect } from 'react';
+
+import CartContext from '../Context/cart-context'; 
 
 import s from './CartCount.module.scss';
 
-const CartCount = () => {
-    let [count, setCount] = useState(0);
+const CartCount = ({count, onRemoveFromCart, onAddToCart}) => {
+    // let [count, setCount] = useState(0);
 
-    const handleRemItem = () => {
-        if (count === 0) return;
+    // const handleRemItem = (e) => {
+    //     if (count === 0) return;
 
-        setCount( countState => countState - 1);
-    }
+    //     setCount( countState => countState - 1);
+    //     onClick(count);
+    // }
 
-    const handleAddItem = () => setCount( countState => countState + 1);
+    // const handleAddItem = () => {
+    //     setCount( countState => countState + 1);
+    //     onClick(count);
+    // } 
 
     return (
         <div>
-            <button type='button' className={`${s.cartBtn} ${s.rem}`} onClick={handleRemItem}>&#43;</button>
+            <button 
+                type='button' 
+                className={`${s.cartBtn} ${s.rem}`} 
+                onClick={onRemoveFromCart}
+            >&#8722;</button>
             <span className={s.count}>{count}</span>
-            <button type='button' className={`${s.cartBtn} ${s.add}`} onClick={handleAddItem}>&#8722;</button>
+            <button 
+                type='button' 
+                className={`${s.cartBtn} ${s.add}`} 
+                onClick={onAddToCart}
+            >&#43;</button>
         </div>
     )
 }

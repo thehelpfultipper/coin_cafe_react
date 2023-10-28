@@ -7,7 +7,14 @@ import s from './Menu.module.scss';
 let apiUrls = [
     'https://api.sampleapis.com/coffee/hot',
     'https://api.sampleapis.com/coffee/iced'
-]
+];
+
+const generateRandomPrice = () => {
+    let num = Math.floor(Math.random() * 890 + 100) // number between 100 - 890
+    let price = (num / 100).toFixed(2);
+
+    return price;
+}
 
 const Menu = () => {
     let [data, setData] = useState([]);
@@ -30,7 +37,8 @@ const Menu = () => {
     return (
         <div className={s.container}>
             {data.map( (item, i) => {
-                return <MenuItem data={item} key={i} />
+                let newItem = {...item, price: generateRandomPrice(), count: 1}
+                return <MenuItem data={newItem} id={i} key={i} />
             })}
         </div>
     )
