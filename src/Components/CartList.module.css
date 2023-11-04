@@ -1,0 +1,11 @@
+
+.total_wrapper {
+    display:  flex;
+    justify-content: space-between;
+}
+
+.total_wrapper span {
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: .05rem;
+}
