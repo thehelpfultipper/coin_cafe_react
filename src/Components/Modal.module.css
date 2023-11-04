@@ -1,6 +1,6 @@
 .backdrop {
     background: #1c1c1c9f;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
