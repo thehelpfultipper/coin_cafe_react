@@ -5,20 +5,7 @@ import CartContext from '../Context/cart-context';
 import s from './CartCount.module.scss';
 
 const CartCount = ({count, onRemoveFromCart, onAddToCart}) => {
-    // let [count, setCount] = useState(0);
-
-    // const handleRemItem = (e) => {
-    //     if (count === 0) return;
-
-    //     setCount( countState => countState - 1);
-    //     onClick(count);
-    // }
-
-    // const handleAddItem = () => {
-    //     setCount( countState => countState + 1);
-    //     onClick(count);
-    // } 
-
+   
     return (
         <div>
             <button 
