@@ -11,9 +11,11 @@ const getFirstSentence = (text) => {
     return sentences ? sentences[0].trim() : text.trim();
 }
 
-const MenuItem = ({data, id}) => {
-    let {items, totalAmount, addItem, removeItem} = useContext(CartContext);
+const MenuItem = (props) => {
+    let {addItem, removeItem} = useContext(CartContext);
     let [count, setCount] = useState(0);
+
+    let {data, id} = props;
 
     const addToCartHandler = (item=data) => {
         addItem(item);
@@ -42,7 +44,7 @@ const MenuItem = ({data, id}) => {
             <div className={s.price}>
                 <span>${data.price}</span>
                 <CartCount 
-                    count={count}
+                    count={props?.cartItemCount ? props.cartItemCount : count}
                     onAddToCart={addToCartHandler.bind(null, data)} 
                     onRemoveFromCart={removeCartHandler.bind(null, data.id)} 
                 />
