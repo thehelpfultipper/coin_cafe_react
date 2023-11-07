@@ -13,7 +13,7 @@ const getFirstSentence = (text) => {
 
 const MenuItem = ({data, id}) => {
     let [ count, setCount ] = useState(0); 
-    let {addItem, removeItem} = useContext(CartContext);
+    let {items, addItem, removeItem} = useContext(CartContext);
 
     const addToCartHandler = (item=data) => {
         addItem(item);
@@ -25,7 +25,7 @@ const MenuItem = ({data, id}) => {
         removeItem(id);
         // Update item count in menu 
         setCount(prevCount => {
-            if(prevCount === 0) return 0;
+            if(prevCount === 0 || items.count(data) === 0) return 0;
             return prevCount - 1;
         });
     }

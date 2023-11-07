@@ -15,7 +15,7 @@
     left: 50%;
     transform: translateX(-50%);
     border-radius: 20px;
-    padding: 20px;
+    /* padding: 20px; */
     background: white;
     box-shadow: 0 0 5px darkgray;
     z-index: 99;
