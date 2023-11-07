@@ -1,19 +1,21 @@
-import { Fragment } from 'react';
+import { Fragment, useContext } from 'react';
 
 import Header from './Components/Header';
 import Menu from './Components/Menu';
-import CartContextProvider from './Context/CartProvider';
+import CartContext from './Context/cart-context';
 import CartList from './Components/CartList';
 
 import s from './App.module.scss';
 
 function App() {
+  let { items, isCartShowing } = useContext(CartContext);
+
   return (
-    <CartContextProvider>
-      <CartList />
+    <Fragment>
+      { isCartShowing && items.length > 0 && <CartList /> }
       <Header />
       <Menu />
-    </CartContextProvider>
+    </Fragment>
   )
 }
 

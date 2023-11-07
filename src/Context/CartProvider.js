@@ -4,7 +4,8 @@ import CartContext from "./cart-context";
 
 const defaultContext = {
     items: [],
-    totalAmount: 0
+    totalAmount: 0,
+    isCartShowing: false
 }
 
 const cartReducer = (state, action) => {
@@ -30,6 +31,7 @@ const cartReducer = (state, action) => {
         let newAmount = state.totalAmount + (action.data.price * action.data.count);
 
         return {
+            ...state,
             items: newItems,
             totalAmount: newAmount
         }
@@ -38,6 +40,7 @@ const cartReducer = (state, action) => {
     if (action.type === 'REMOVE') {
         let newItems,
             newAmount;
+
         // Find item
         let itemIndex = state.items.findIndex(item => item.id === action.id);
         let existingItem = state.items[itemIndex];
@@ -64,10 +67,19 @@ const cartReducer = (state, action) => {
         }
 
         return {
+            ...state,
             items: newItems,
             totalAmount: newAmount
         }
     }
+
+    if (action.type === 'CART') {
+        return {
+            ...state,
+            isCartShowing: action.val
+        };
+    }
+
     return defaultContext;
 }
 
@@ -77,16 +89,20 @@ const CartContextProvider = ({ children }) => {
     const addToCartHandler = item => {
         cartDispatcher({ type: 'ADD', data: item });
     }
-
+;
     const removeFromCartHandler = id => {
         cartDispatcher({ type: 'REMOVE', id });
     }
 
+    const showCartHandler = val => cartDispatcher({type: 'CART', val});
+
     const cartContext = {
         items: cartState.items,
         totalAmount: cartState.totalAmount,
+        isCartShowing: cartState.isCartShowing,
         addItem: addToCartHandler,
-        removeItem: removeFromCartHandler
+        removeItem: removeFromCartHandler,
+        showCart: showCartHandler
     }
 
     return (

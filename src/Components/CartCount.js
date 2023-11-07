@@ -4,8 +4,7 @@ import CartContext from '../Context/cart-context';
 
 import s from './CartCount.module.scss';
 
-const CartCount = ({count, onRemoveFromCart, onAddToCart}) => {
-   
+const CartCount = ({count, onAddToCart, onRemoveFromCart}) => {
     return (
         <div>
             <button 
