@@ -78,3 +78,9 @@
     font-weight: 600;
     letter-spacing: .05rem;
 }
+
+@media (max-width: 320px) {
+    .cartlist_img {
+        display: none!important;
+    }
+}
