@@ -32,7 +32,7 @@ const CartList = () => {
                                     <span className={s.cartlist_img}><img src={item.image} alt={item.title} /></span>
                                     <span className={s.cartlist_content}>
                                         <span>{item.title}</span><br />
-                                        <span>{item.count} X ${item.price}</span>
+                                        <span>{item.count} &times; ${item.price}</span>
                                     </span>
                                     <span className={s.cartlist_action}>
                                         <span>${itemTotalAmnt}</span><br />

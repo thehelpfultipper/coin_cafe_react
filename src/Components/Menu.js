@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 
 import MenuItem from './MenuItem';
+import ScrollToTop from './ScrollToTop';
+
 
 import s from './Menu.module.scss';
 
@@ -29,6 +31,7 @@ const Menu = () => {
             {data.map((item, i) => {
                 return <MenuItem data={item} id={i} key={i} />
             })}
+            <ScrollToTop />
         </div>
     )
 }

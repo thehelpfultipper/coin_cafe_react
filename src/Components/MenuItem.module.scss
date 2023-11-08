@@ -10,14 +10,28 @@
   border-bottom: 1px solid lightgray;
   padding-top: rem(10px);
 
+  @media (max-width: 375px) {
+    height: fit-content;
+  }
+
   .img {
-    width: rem(100px);
-    height: rem(120px);
+    max-width: rem(100px);
+    max-height: rem(100px);
     overflow: hidden;
     display: flex;
     align-items: center;
     flex: 1;
     border-radius: 50%;
+
+    @media (max-width: 768px) {
+      max-width: rem(80px);
+      max-height: rem(80px);
+    }
+
+    @media (max-width: 425px) {
+      display: none;
+    }
+
 
     img {
       @include respimg;
@@ -27,6 +41,10 @@
 
   .desc {
     flex: 4;
+
+    @media (max-width:320px) {
+      flex: 2;
+    }
   }
 
   .price {
