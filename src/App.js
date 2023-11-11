@@ -5,8 +5,6 @@ import Menu from './Components/Menu';
 import CartContext from './Context/cart-context';
 import CartList from './Components/CartList';
 
-import s from './App.module.scss';
-
 function App() {
   let { items, isCartShowing } = useContext(CartContext);
 

@@ -1,7 +1,3 @@
-import { useState, useContext, useEffect } from 'react';
-
-import CartContext from '../Context/cart-context'; 
-
 import s from './CartCount.module.scss';
 
 const CartCount = ({count, onAddToCart, onRemoveFromCart}) => {

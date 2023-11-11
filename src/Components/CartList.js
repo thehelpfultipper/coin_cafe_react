@@ -3,7 +3,6 @@ import { useContext } from 'react';
 import Modal from './Modal';
 import CartContext from '../Context/cart-context';
 import CartCount from './CartCount';
-import MenuItem from './MenuItem';
 
 import s from './CartList.module.css';
 
