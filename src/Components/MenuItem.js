@@ -25,7 +25,7 @@ const MenuItem = ({data, id}) => {
         removeItem(id);
         // Update item count in menu 
         setCount(prevCount => {
-            if(prevCount === 0 || items.count(data) === 0) return 0;
+            if(prevCount === 0 || items.count === 0) return 0;
             return prevCount - 1;
         });
     }
