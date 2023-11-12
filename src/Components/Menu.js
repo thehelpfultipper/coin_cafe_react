@@ -6,7 +6,7 @@ import ScrollToTop from './ScrollToTop';
 
 import s from './Menu.module.scss';
 
-let URL = 'https://thehelpfultipper.github.io/coin_cafe_react/coffee.json';
+let URL = 'https://thehelpfultipper.github.io/coffee_data_custom/coffee.json';
 
 const Menu = () => {
     let [data, setData] = useState([]);
