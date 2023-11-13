@@ -19,12 +19,9 @@
   background: white;
   box-shadow: 0 0 5px darkgray;
   z-index: 99;
-}
 
-@media (max-width: 768px) {
-  .overlay {
+  @media (max-width: 768px) {
     top: calc(50% - 300px / 2);
     width: calc(100vw - 20px);
   }
 }
-

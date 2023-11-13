@@ -4,7 +4,7 @@ import Modal from './Modal';
 import CartContext from '../Context/cart-context';
 import CartCount from './CartCount';
 
-import s from './CartList.module.css';
+import s from './CartList.module.scss';
 
 const CartList = () => {
     let { items, totalAmount, addItem, removeItem } = useContext(CartContext);

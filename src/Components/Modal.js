@@ -3,7 +3,7 @@ import { createPortal } from 'react-dom';
 
 import CartContext from '../Context/cart-context';
 
-import s from './Modal.module.css';
+import s from './Modal.module.scss';
 
 const Backdrop = () => {
     let { showCart } = useContext(CartContext);
