@@ -3,10 +3,11 @@
 Coin Café is a modern coffee order application built with React, styled using Sass for a sleek and responsive user interface. This project leverages the power of React's useReducer for efficient and scalable state management, and useContext for seamless data sharing across the application.
 
 ## Live Demo
-Check out the live demo of the app hosted on GitHub Pages: 
+Check out the live demo of the app hosted on GitHub Pages: [https://thehelpfultipper.github.io/coin_cafe_react/](https://thehelpfultipper.github.io/coin_cafe_react/)
 
 ## Tutorial
-Read how to build this React app on our tutorial blog post: 
+Read how to build this React app on our tutorial blog post: [How To Make A Really Good Shopping Cart With React
+](https://thehelpfultipper.com/make-a-really-good-shopping-cart-react/)
 
 ## Features
 - **User-Friendly Interface:** Enjoy a clean and intuitive user interface designed for an exceptional coffee ordering experience.
