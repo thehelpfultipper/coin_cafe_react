@@ -20,7 +20,7 @@ const cartReducer = (state, action) => {
             // Update only the count of the item
             let updatedItem = {
                 ...existingItem,
-                count: existingItem.count + action.data.count
+                count: existingItem.count + 1
             };
             newItems = [...state.items];
             newItems[itemIndex] = updatedItem;
